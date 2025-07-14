@@ -29,13 +29,15 @@ earth = sphere(
 )
 
 # Starfield background
-star_layer = box(
-    pos=vector(0, 0, -1e9),
-    size=vector(3e9, 3e9, 1e6),
-    texture="https://upload.wikimedia.org/wikipedia/commons/0/01/Starsinthesky.jpg",
-    emissive=True,
-    opacity=1
-)
+np.random.seed(42)
+for _ in range(500):
+    x = np.random.uniform(-1e8, 1e8)
+    y = np.random.uniform(-1e8, 1e8)
+    z = -2e8  # Keep all stars far back for 2D appearance
+    brightness = np.random.uniform(0.5, 1.0)
+    radius = np.random.uniform(1e5, 3e5)
+    sphere(pos=vector(x, y, z), radius=radius, color=vector(brightness, brightness, brightness), emissive=True)
+
 
 
 moon = sphere(
