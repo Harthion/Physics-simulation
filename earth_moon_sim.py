@@ -20,13 +20,20 @@ scene.height = 600
 scene.title  = "Earth–Moon–Spacecraft Simulation"
 
 
-
+#earth eith texture
 earth = sphere(
     pos=vector(0,0,0),
     radius=6.371e6,
     texture=textures.earth,
     shininess=0.8
 )
+
+#starfield background
+for _ in range(200):
+    x, y, z = np.random.uniform(-1e8, 1e8, 3)
+    sphere(pos=vector(x,y,z),radius=1e6, color=color.white, emissive=True)
+
+
 
 moon = sphere(
     pos=vector(r_em,0,0),
@@ -36,6 +43,7 @@ moon = sphere(
     trail_radius=1e6
 )
 
+#spacecreaft with trail 
 craft = sphere(
     pos=init_pos,
     radius=2e6,
@@ -58,11 +66,12 @@ def acceleration(r, t):
     a_m = G * M_m * r_m / (r_m.mag**3)
     return a_e + a_m
 
-# AI below
+# AI below - inital state 
 r = init_pos
 v = init_vel
 t = 0.0
 
+#simulation loop 
 while t < t_max:
     rate(100)   # cap to 100 iterations/sec
 
