@@ -28,15 +28,10 @@ earth = sphere(
     shininess=0.8
 )
 
-# Starfield background
-np.random.seed(42)
-for _ in range(500):
-    x = np.random.uniform(-1e8, 1e8)
-    y = np.random.uniform(-1e8, 1e8)
-    z = -2e8  # Keep all stars far back for 2D appearance
-    brightness = np.random.uniform(0.5, 1.0)
-    radius = np.random.uniform(1e5, 3e5)
-    sphere(pos=vector(x, y, z), radius=radius, color=vector(brightness, brightness, brightness), emissive=True)
+#starfield background
+for _ in range(200):
+    x, y, z = np.random.uniform(-1e8, 1e8, 3)
+    sphere(pos=vector(x,y,z),radius=1e6, color=color.white, emissive=True)
 
 
 
