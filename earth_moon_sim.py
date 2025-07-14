@@ -20,8 +20,6 @@ scene.height = 600
 scene.title  = "Earth–Moon–Spacecraft Simulation"
 scene.background = color.black
 scene.forward=vector(-1, -1, -1)  # set camera angle
-
-
 #earth eith texture
 earth = sphere(
     pos=vector(0,0,0),
@@ -30,17 +28,13 @@ earth = sphere(
     shininess=0.8
 )
 
-# 2D starfield using textured flat box (redefined with VPython-compatible approach)
-try:
-    starfield = box(
-        pos=vector(0, 0, -5e8),
-        size=vector(1e9, 1e9, 1e6),
-        texture="https://upload.wikimedia.org/wikipedia/commons/0/01/Starsinthesky.jpg",
-        emissive=True,
-        opacity=1
-    )
-except Exception as e:
-    print("Could not load starfield texture:", e)
+#starfield background
+for _ in range(200):
+    x, y, z = np.random.uniform(-1e8, 1e8, 3)
+    sphere(pos=vector(x,y,z),radius=1e6, color=color.white, emissive=True)
+
+
+
 moon = sphere(
     pos=vector(r_em,0,0),
     radius=1.737e6,
