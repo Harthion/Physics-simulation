@@ -1,0 +1,13 @@
+{
+  "configurations": [
+    {
+      "name": "Win32",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "C:/SFML/include"
+      ],
+      // ... other settings ...
+    }
+  ],
+  "version": 4
+}
