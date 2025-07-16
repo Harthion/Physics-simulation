@@ -15,8 +15,8 @@ init_vel = vector(0, 7800, 0)     # approx LEO speed
 dt       = 60                     # simulation timestep (s)
 t_max    = 5 * 24*3600            # run for 5 days
 
-scene.width  = 800
-scene.height = 600
+scene.width  = 1600
+scene.height = 1200
 scene.title  = "Earth–Moon–Spacecraft Simulation"
 scene.background = color.black
 scene.forward=vector(-1, -1, -1)  # set camera angle
