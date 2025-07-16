@@ -2,7 +2,7 @@
 #include <cmath>
 #include <iostream>
 
-const double G   = 6.67430e-11;
+const double G = 6.67430e-11;
 const double M_s = 1.989e30;         // Sun mass (kg)
 const double M_e = 5.972e24;         // Earth mass (kg)
 const double M_m = 7.3477e22;        // Moon mass (kg)
